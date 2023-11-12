@@ -50,7 +50,8 @@ public class GetAuthorizationTokenConfig {
     @Bean
     public AuthenticationProvider authenticationProvider(){
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-        authProvider.setUserDetailsPasswordService(userDetailsService());
+        authProvider.setUserDetailsService(userDetailsService());
+        //authProvider.setUserDetailsPasswordService(userDetailsService());
         //authProvider.setUserDetailsPasswordService((UserDetailsPasswordService) userDetailsService());
         authProvider.setPasswordEncoder(passwordEncoder());
         return authProvider;
