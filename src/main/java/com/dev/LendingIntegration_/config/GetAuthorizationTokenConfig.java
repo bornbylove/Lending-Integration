@@ -51,8 +51,6 @@ public class GetAuthorizationTokenConfig {
     public AuthenticationProvider authenticationProvider(){
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
         authProvider.setUserDetailsService(userDetailsService());
-        //authProvider.setUserDetailsPasswordService(userDetailsService());
-        //authProvider.setUserDetailsPasswordService((UserDetailsPasswordService) userDetailsService());
         authProvider.setPasswordEncoder(passwordEncoder());
         return authProvider;
     }

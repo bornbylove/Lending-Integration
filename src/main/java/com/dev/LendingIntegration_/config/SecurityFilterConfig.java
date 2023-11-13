@@ -23,7 +23,7 @@ public class SecurityFilterConfig {
                 .csrf()
                 .disable()
                 .authorizeRequests()
-                .antMatchers("/loan/v1/getPartnerAuthorizationToken")
+                .antMatchers("/loan/v1/auth/*")
                 .permitAll()
                 .anyRequest()
                 .authenticated()

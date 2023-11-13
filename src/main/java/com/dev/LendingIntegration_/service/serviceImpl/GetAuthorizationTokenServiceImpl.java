@@ -1,5 +1,6 @@
 package com.dev.LendingIntegration_.service.serviceImpl;
 
+import com.dev.LendingIntegration_.service.GetAuthorizationTokenService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -12,8 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
-@RequiredArgsConstructor
-public class GetAuthorizationTokenServiceImpl {
+public class GetAuthorizationTokenServiceImpl implements GetAuthorizationTokenService {
 
     @Value("${jwt.secret}")
     private String jwtSecret;
@@ -31,7 +31,7 @@ public class GetAuthorizationTokenServiceImpl {
                 .setClaims(claims)
                 .setIssuedAt(now)
                 .setExpiration(expirationDate)
-                .signWith(SignatureAlgorithm.ES512, jwtSecret)
+                .signWith(SignatureAlgorithm.HS512, jwtSecret)
                 .compact();
     }
     public Boolean validateToken(String token){

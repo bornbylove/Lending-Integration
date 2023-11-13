@@ -27,7 +27,7 @@ public class User implements UserDetails {
     private String responseCode;
     @Column(name = "Response_Message", nullable = false)
     private String responseMessage;
-    @Column(name = "Authentication_Token", nullable = false)
+    @Column(name = "Authentication_Token")
     private String authToken;
     @Column(name = "Expiration_Time", nullable = false)
     private String expirationInMinutes;
