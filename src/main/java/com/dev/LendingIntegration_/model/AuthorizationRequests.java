@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class AuthorizationRequests {
     @NotBlank
-    @Size(max = 25, message = "Username should not be gretaer than 25 characters")
+    @Size(max = 25, message = "Username should not be greater than 25 characters")
     private String username;
     @NotBlank
     @Size(min = 8, message = "Password should not be less than 8 characters")

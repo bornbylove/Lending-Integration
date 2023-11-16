@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
@@ -13,5 +14,8 @@ public class AuthorizationResponses {
     private String responseCode;
     private String responseMessage;
     private String authToken;
-    Date expirationInMinutes;
+    long durationInMinutes = 1;
+    LocalDateTime currentTime = LocalDateTime.now();
+    LocalDateTime expirationInMinutes = currentTime.plusMinutes(durationInMinutes);
+
 }

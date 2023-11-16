@@ -1,5 +1,6 @@
 package com.dev.LendingIntegration_.config;
 
+import com.dev.LendingIntegration_.model.AuthorizationResponses;
 import com.dev.LendingIntegration_.repository.UserRepository;
 import com.dev.LendingIntegration_.service.serviceImpl.AuthUserDetailsServiceImpl;
 import lombok.RequiredArgsConstructor;
@@ -53,6 +54,11 @@ public class GetAuthorizationTokenConfig {
         authProvider.setUserDetailsService(userDetailsService());
         authProvider.setPasswordEncoder(passwordEncoder());
         return authProvider;
+    }
+
+    @Bean
+    AuthorizationResponses authorizationResponse(){
+        return new AuthorizationResponses();
     }
 
     @Bean

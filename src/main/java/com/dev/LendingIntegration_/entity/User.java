@@ -25,12 +25,7 @@ public class User implements UserDetails {
     private String password;
     @Column(name = "response_Code", nullable = false)
     private String responseCode;
-    @Column(name = "Response_Message", nullable = false)
-    private String responseMessage;
-    @Column(name = "Authentication_Token")
-    private String authToken;
-    @Column(name = "Expiration_Time", nullable = false)
-    private String expirationInMinutes;
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
